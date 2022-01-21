@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+from pathlib import Path
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -121,3 +122,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
